@@ -1,0 +1,95 @@
+﻿@model DataObject.Service
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Pet Food</title>
+    <link rel="stylesheet" href="~/css/ProductDetailsStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <section class="product-detail">
+        <div class="image-gallery">
+            <img src="@Url.Action("GetServiceImage", "Admin", new { fileName = Model.Image })" alt="Service Image">
+
+        </div>
+        <div class="details">
+            <h1>@Model.ServiceName</h1>
+            <ul>
+                <li>@Model.ServiceDescription</li>
+            </ul>
+            <p class="price"><del>@Model.CostPerUnity vnd</del></p>
+            @if (Model.HasLimit == true)
+            {
+                <p class="price"><del>Available right now!</del></p>
+            }
+            else
+            {
+                <p class="price"><del>Currently unavailable</del></p>
+            }
+            <a asp-action="SelectPet" asp-route-serviceId="@Model.ServiceId" class="button">
+                Plan Your Pet Right Now!
+            </a>
+        </div>
+    </section>
+    <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="review">
+            <p><strong>John Doe:</strong> Great product! My dog loves it.</p>
+            <button class="btn reply-btn">Reply</button>
+        </div>
+        <div class="review-form">
+            <h3>Leave a Review</h3>
+            <textarea id="review-text" placeholder="Write your review here..."></textarea>
+            <button class="btn" id="submit-review">Submit Review</button>
+        </div>
+    </section>
+
+    <section class="other-products">
+        <h2>Other Products</h2>
+        <div class="box-container">
+            <div class="box">
+                <img src="~/image/product_05.jpg" alt="Other Product 1">
+                <h3>Product Name 1</h3>
+                <p class="price">$19.99</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="box">
+                <img src="~/image/product_04.jpg" alt="Other Product 2">
+                <h3>Product Name 2</h3>
+                <p class="price">$24.99</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="box">
+                <img src="~/image/product_03.jpg" alt="Other Product 3">
+                <h3>Product Name 3</h3>
+                <p class="price">$34.99</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- shop section ends -->
+
+
+    <footer class="footer">
+
+        <img src="~/image/top_wave.png" alt="">
+
+        <div class="share">
+            <a href="#" class="btn"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#" class="btn"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#" class="btn"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#" class="btn"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#" class="btn"> <i class="fab fa-pinterest"></i> pinterest </a>
+        </div>
+
+        <div class="credit"> 2024 created by <span> Group 8 </span> | all rights reserved! </div>
+
+    </footer>
+
+    <script src="~/js/productDetails_script.js"></script>
+</body>
+</html>

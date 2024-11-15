@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DataObject.Event>
+@{
+    Layout = null;
+}
+<section id="Events" class="dashboard-section" style="display: none;">
+    <h2>Events</h2>
+    <button id="addEventBtn" class="add-btn">Add Event</button>
+    <div id="eventFormContainer"></div>
+    <table id="eventsTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Created Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var e in Model)
+                {
+                    <tr>
+                        <td>@e.EventTitle</td>
+                <td>@e.Description</td>
+                        <td><img src="@Url.Action("GetEventImage", "Admin", new { fileName = e.Image })" alt="Product Image" width="50"></td>
+                <td>@e.PostDate</td>
+                <td>
+                            <button class="editEventBtn" data-id="@e.EventId">Edit</button>
+                            <button class="deleteEventBtn" data-id="@e.EventId">Delete</button>
+                </td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+</section>

@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="~/css/AdminStyle.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li><a href="#overview" data-target="overview">Overview</a></li>
+                <li><a href="#users" data-target="users">Users</a></li>
+                <li><a href="#PetService" data-target="PetService">Pet Service</a></li>
+                <li><a href="#Products" data-target="Products">Products</a></li>
+                <li><a href="#Events" data-target="Events">Events</a></li>
+                <li><a href="#Invoice" data-target="Invoice">Invoice</a></li>
+                <li><a href="#PlannedServices" data-target="PlannedServices">Planned Services</a></li>
+                <li><a href="#Facility" data-target="Facility">Facilities</a></li>
+                <li><a href="#payments" data-target="Payment">Payments</a></li>
+                <li><a href="#settings" data-target="settings">Settings</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Navbar -->
+            <nav class="navbar">
+                <div class="navbar-title">Admin Panel</div>
+                <div class="navbar-user">
+                    <span>Welcome, Admin</span>
+                    <button onclick="window.location.href='@Url.Action("Logout", "Access")'" class="logout-btn">Logout</button>
+                </div>
+            </nav>
+            <div id="dynamicContent">
+
+                <!-- Overview Section -->
+                <!-- Users Section -->
+                <!-- Products Section -->
+                <!-- Events Section -->
+                <!-- Pet Service Section -->
+                <!-- Payment Section -->
+                <!-- Settings Section -->
+            </div>
+            </div>
+        </div>
+
+    <!-- Modal for Users -->
+
+    <!-- Modal for Products -->
+  
+        <!--loads productForm-->
+
+
+    <!-- Modal for Events -->
+    
+
+    <!-- Modal for Pet Service -->
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.js"></script>
+<script defer src="~/js/AdminScript.js"></script>
+<script defer src="~/js/ProductSectionScript.js"></script>
+<script defer src="~/js/PetServiceSection.js"></script>
+<script defer src="~/js/PlannedServiceSection.js"></script>
+<script defer src="~/js/EventSection.js"></script>
+<script defer src="~/js/FacilitySection.js"></script>
+<script defer src="~/js/SpecieSection.js"></script>
